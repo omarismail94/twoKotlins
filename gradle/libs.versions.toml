@@ -1,0 +1,15 @@
+[versions]
+kotlin = "1.9.24"
+junit = "4.13.2"
+
+[libraries]
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib"}
+kotlinStdlibJs = { module = "org.jetbrains.kotlin:kotlin-stdlib-js"}
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test"}
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit"}
+kotlin-test-js-runner = { module = "org.jetbrains.kotlin:kotlin-test-js-runner", version.ref = "kotlin"}
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+
+
+[plugins]
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
