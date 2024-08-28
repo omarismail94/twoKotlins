@@ -42,9 +42,6 @@ kotlin {
         val wasmJsMain by getting
         val wasmJsTest by getting
 
-        wasmJsMain.dependencies {
-            implementation(project(":akotlin7"))
-        }
         wasmJsTest.dependencies {
             implementation(libs.kotlin.test)
         }

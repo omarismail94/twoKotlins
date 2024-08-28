@@ -5,7 +5,7 @@ class HiTest {
 
     @Test
     fun testHiTest() {
-       assertTrue(main() == "hi7")
+       assertTrue(main() == "hi9")
 
     }
 

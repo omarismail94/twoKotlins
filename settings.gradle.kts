@@ -29,4 +29,3 @@ dependencyResolutionManagement {
 }
 
 include("akotlin9")
-include("akotlin7")
