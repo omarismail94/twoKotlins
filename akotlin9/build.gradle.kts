@@ -1,24 +1,10 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
-import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-}
-
-configurations.configureEach {
-    resolutionStrategy {
-        eachDependency {
-            if (
-                requested.group == "org.jetbrains.kotlin" &&
-                requested.version == null
-            ) {
-                useVersion("1.9.24")
-            }
-        }
-    }
 }
 
 kotlin {
@@ -55,6 +41,22 @@ tasks.configureEach {
     }
 }
 
-afterEvaluate {
-    kotlinExtension.coreLibrariesVersion = "1.9.24"
+val wasmTestArtifactAttribute = Attribute.of("com.example.wasm-test-artifact", String::class.java)
+
+configurations {
+    // Custom configuration for WASM test artifacts
+    register("wasmTestArtifacts") {
+        isCanBeConsumed = true
+        isCanBeResolved = false
+        attributes {
+            attribute(wasmTestArtifactAttribute, "wasm-test")
+        }
+    }
+}
+
+artifacts {
+    // Add the task output directly to the configuration
+    add("wasmTestArtifacts", tasks.named("compileTestDevelopmentExecutableKotlinWasmJs").map {
+        it.outputs.files.singleFile
+    })
 }

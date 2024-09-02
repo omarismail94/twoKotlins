@@ -29,3 +29,5 @@ dependencyResolutionManagement {
 }
 
 include("akotlin9")
+include("aWasmTestOnAndroid")
+

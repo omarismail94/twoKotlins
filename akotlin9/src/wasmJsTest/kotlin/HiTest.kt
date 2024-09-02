@@ -6,7 +6,6 @@ class HiTest {
     @Test
     fun testHiTest() {
        assertTrue(main() == "hi9")
-
     }
 
 }
