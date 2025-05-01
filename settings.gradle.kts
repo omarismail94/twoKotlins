@@ -28,5 +28,5 @@ dependencyResolutionManagement {
     }
 }
 
-include("akotlin9")
+include("debugmate")
 

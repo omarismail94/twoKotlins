@@ -5,10 +5,17 @@ build/
 !**/src/test/**/build/
 
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+**/.idea/**
+!**/.idea/codeStyleSettings.xml
+!**/.idea/copyright
+!**/.idea/codeStyles
+!.idea/codeStyles/Project.xml
+!.idea/codeStyles/codeStyleConfig.xml
+!.idea/copyright/AndroidCopyright.xml
+!.idea/copyright/profiles_settings.xml
+!.idea/inspectionProfiles/Project_Default.xml
+!.idea/ktfmt.xml
+!.idea/icon.svg
 *.iws
 *.iml
 *.ipr
@@ -40,3 +47,6 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+local.properties
+.kotlin
